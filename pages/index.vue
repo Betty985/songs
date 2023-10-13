@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLogger } from '@nuxt/kit'
+
 definePageMeta({
     middleware: ['auth'],
 });
@@ -15,15 +17,17 @@ const { data } = await useFetch(
 </script>
 
 <template>
-    <pre>{{ data }}</pre>
-    <a-button type="primary">Primary Button</a-button>
-    <main>
-        <ContentDoc />
-    </main>
-    <button @click="navigateTo('/posts')
-        ">
-        posts
-    </button>
+    <div>
+        <pre>{{ data }}</pre>
+        <a-button type="primary">Primary Button</a-button>
+        <main>
+            <ContentDoc />
+        </main>
+        <button @click="navigateTo('/posts')
+            ">
+            posts
+        </button>
+    </div>
 </template>
 
 
