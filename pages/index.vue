@@ -18,15 +18,16 @@ const { data } = await useFetch(
 
 <template>
     <div>
-        <pre>{{ data }}</pre>
-        <a-button type="primary">Primary Button</a-button>
-        <main>
-            <ContentDoc />
-        </main>
-        <button @click="navigateTo('/posts')
-            ">
-            posts
-        </button>
+        <NuxtLayout>
+            <pre>{{ data?.hello + 'content' }}</pre>
+            <main>
+                <ContentDoc />
+            </main>
+            <button @click="navigateTo('/posts')
+                ">
+                posts
+            </button>
+        </NuxtLayout>
     </div>
 </template>
 

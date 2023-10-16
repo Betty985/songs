@@ -1,3 +1,10 @@
+---
+navigation.title: "ANTI-UTOPIA"
+# Custom og:image
+head.description: "This is a custom description for Content Wind about page."
+head.image: "https://fastly.picsum.photos/id/866/536/354.jpg?hmac=tGofDTV7tl2rprappPzKFiZ9vDh5MKj39oa2D--gqhA"
+---
+
 Myself was taken since I was a young girl
 Lost in the garden, wait for golden hour
 Gazed by the others,fading like a flower
