@@ -3,16 +3,17 @@
         <a-layout-header>
             <div class="logo" />
             <a-menu mode="horizontal" :style="{ lineHeight: '64px' }">
-                <template v-for="item in menuItems">
-                    <a-menu-item v-if="!item.children" :key="item._path" :to="item._path">
-                        <NuxtLink :key="item._path" :to="item._path" active-class="font-bold" class="mr-6">
-                            {{ item.title }}
+                <template v-for="(item, index) in menuItems">
+                    <a-menu-item v-if="!item.children" :key="`item-${index}`" :to="item._path">
+                        <NuxtLink :key="`item-link-${index}`" :to="item._path">
+                            {{ item.icon }} {{ item.title }}
                         </NuxtLink>
                     </a-menu-item>
-                    <a-sub-menu v-else :key="item._path" :title="item.title">
-                        <a-menu-item v-for="subItem in item.children" :key="subItem._path" :to="subItem._path">
-                            <NuxtLink :key="subItem._path" :to="subItem._path" active-class="font-bold" class="mr-6">
-                                {{ subItem.title }}
+                    <a-sub-menu v-else :key="`sub-menu-${index}`" :title="item.title">
+                        <a-menu-item v-for="(subItem, subIndex) in item.children" :key="`sub-item-${index}-${subIndex}`"
+                            :to="subItem._path">
+                            <NuxtLink :key="`sub-item-link-${index}-${subIndex}`" :to="subItem._path">
+                                {{ subItem.icon }} {{ subItem.title }}
                             </NuxtLink>
                         </a-menu-item>
                     </a-sub-menu>
@@ -36,9 +37,7 @@
     </a-layout>
 </template>
 <script lang="ts" setup>
-const { navigation } = useContent()
-const menuItems = navigation
-console.log(menuItems)
+const { navigation: menuItems } = useContent()
 </script>
 <style scoped>
 .site-layout-content {

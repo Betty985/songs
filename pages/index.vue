@@ -19,7 +19,7 @@ const { data } = await useFetch(
 <template>
     <div>
         <NuxtLayout>
-            <pre>{{ data?.hello + 'content' }}</pre>
+            <pre>{{ data?.hello + ' content' }}</pre>
             <main>
                 <ContentDoc />
             </main>

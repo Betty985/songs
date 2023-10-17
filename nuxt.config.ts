@@ -7,10 +7,8 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxt/content"],
   pages: true,
-  // pageTransition: { name: "page", mode: "rotate" },
-  // layoutTransition: { name: "layout", mode: "rotate" },
   app: {
-    pageTransition: { name: "page", mode: "rotate" },
+    pageTransition: { name: "page", mode: "out-in" },
   },
   // https://content.nuxtjs.org
   content: {
