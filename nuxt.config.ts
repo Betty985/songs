@@ -21,4 +21,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  build: {
+    transpile: [/^ant-design-vue/],
+  },
 });

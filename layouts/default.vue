@@ -2,7 +2,7 @@
     <a-layout class="layout">
         <a-layout-header>
             <div class="logo" />
-            <a-menu mode="horizontal" :style="{ lineHeight: '64px' }">
+            <a-menu mode="horizontal" :style="{ lineHeight: '64px' }" @click="handleClick(e)">
                 <template v-for="(item, index) in menuItems">
                     <a-menu-item v-if="!item.children" :key="`item-${index}`" :to="item._path">
                         <NuxtLink :key="`item-link-${index}`" :to="item._path">
@@ -38,6 +38,9 @@
 </template>
 <script lang="ts" setup>
 const { navigation: menuItems } = useContent()
+const handleClick = (e) => {
+    console.log(e)
+}
 </script>
 <style scoped>
 .site-layout-content {
